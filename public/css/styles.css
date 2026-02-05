@@ -688,6 +688,121 @@ header {
 }
 
 /* ===================================
+   Detailed Checklists (What We Inspect)
+   =================================== */
+.checklist-section {
+    padding: var(--space-12) 0;
+    background: white;
+}
+
+.checklist-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-8);
+    margin-top: var(--space-8);
+}
+
+.check-category h3 {
+    color: var(--primary-color);
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-4);
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.check-list {
+    list-style: none;
+    display: grid;
+    gap: var(--space-3);
+}
+
+.check-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+    color: var(--gray-700);
+    font-size: var(--text-base);
+}
+
+.check-list li::before {
+    content: "✓";
+    color: var(--success);
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+/* ===================================
+   Scenarios (When Needed)
+   =================================== */
+.scenarios-section {
+    padding: var(--space-12) 0;
+    background: var(--gray-50);
+}
+
+.scenarios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-6);
+    margin-top: var(--space-8);
+}
+
+.scenario-card {
+    background: white;
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--gray-200);
+    border-left: 4px solid var(--primary-color);
+    transition: transform 0.2s;
+}
+
+.scenario-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.scenario-card h3 {
+    font-size: var(--text-lg);
+    font-weight: var(--font-bold);
+    color: var(--gray-900);
+    margin-bottom: var(--space-2);
+}
+
+.scenario-card p {
+    color: var(--gray-600);
+    font-size: var(--text-sm);
+}
+
+/* ===================================
+   Service Areas
+   =================================== */
+.areas-section {
+    padding: var(--space-12) 0;
+    background: white;
+    border-top: 1px solid var(--gray-100);
+}
+
+.areas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: var(--space-4);
+    margin-top: var(--space-8);
+}
+
+.area-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    color: var(--gray-700);
+    font-weight: var(--font-medium);
+}
+
+.area-item::before {
+    content: "📍";
+    font-size: 0.8em;
+}
+
+/* ===================================
    FAQs
    =================================== */
 .faqs {
@@ -935,6 +1050,50 @@ footer {
     opacity: 0;
     transform: translateY(20px);
     pointer-events: none;
+}
+
+/* Mobile Full Screen Chat */
+@media (max-width: 768px) {
+    .chat-window {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+        z-index: 10000;
+        transform: translateY(0);
+        margin-bottom: 0;
+    }
+
+    .chat-window.hidden {
+        transform: translateY(100%);
+        opacity: 1;
+        /* Keep opacity 1 for slide effect */
+    }
+
+    .chat-header {
+        padding: 20px;
+        padding-top: max(20px, env(safe-area-inset-top));
+        height: auto;
+        min-height: 80px;
+    }
+
+    .chat-header h3 {
+        font-size: 1.25rem;
+    }
+
+    .chat-close {
+        font-size: 2rem;
+        padding: 10px;
+    }
+
+    .chat-form {
+        padding-bottom: max(1rem, env(safe-area-inset-bottom));
+        background: white;
+    }
 }
 
 .chat-header {
