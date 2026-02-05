@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Background circle for visibility on dark mode -->
+  <circle cx="32" cy="32" r="30" fill="white" opacity="0.95"/>
+
+  <!-- Pink document/slip shape -->
+  <path d="M20 12 L44 12 L52 20 L52 54 L20 54 Z" fill="#FF4081"/>
+
+  <!-- Folded corner -->
+  <path d="M44 12 L44 20 L52 20 Z" fill="#C51162"/>
+
+  <!-- White checkmark -->
+  <path d="M28 32 L32 38 L42 24" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Border for contrast -->
+  <circle cx="32" cy="32" r="30" fill="none" stroke="#FF4081" stroke-width="2"/>
+</svg>
